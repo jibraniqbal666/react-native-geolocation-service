@@ -40,8 +40,8 @@ public class LocationUtils {
 
             return locationMode != Settings.Secure.LOCATION_MODE_OFF;
         } else {
-            locationProviders = Settings.Secure.getString(context.getContentResolver(), Settings.Secure.LOCATION_MODE);
-            return !TextUtils.isEmpty(locationProviders);
+            locationProviders = Settings.Secure.getString(context.getContentResolver(), Settings.Secure.LOCATION_PROVIDERS_ALLOWED);
+            return !(TextUtils.isEmpty(locationProviders) && locationProviders == null);
         }
     }
 
